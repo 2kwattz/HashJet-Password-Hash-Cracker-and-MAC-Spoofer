@@ -1,5 +1,6 @@
-import hashlib
+from passlib.hash import mysql323, mysql41, mssql2000, mssql2005, postgres_md5, oracle10, oracle11
 import binascii
+import hashlib
 import pyfiglet
 import time
 import os
@@ -22,7 +23,8 @@ print(f"{y}[*] By Roshan Bhatia. IG/@2kwattz{rc}")
 time.sleep(1)
 print(f"\n[*] Press 1 to generate Password Hash {rc}")
 print(f"[*] Press 2 to crack Password Hash {rc}")
-print(f"[*] Press 3 to spoof your Mac Address (For Linux Users Only!) {rc}")
+print(f"[*] Press 3 to generate hashes for SQL Server {rc}")
+print(f"[*] Press 4 to spoof your Mac Address (For Linux Users Only!) {rc}")
 
 try:
     user_response = int(input())
@@ -47,4 +49,9 @@ if user_response == 1:
     for hashing_algorithm in hashing_algorithms:
         password_hash = hashlib.new(hashing_algorithm,utf_password).hexdigest()
         print(f" Hashing Algorithm : {hashing_algorithm} Password Hash : {password_hash} ")
+
+elif user_response == 3:
+
+    # SQL Hacking functions
+    pass
 
