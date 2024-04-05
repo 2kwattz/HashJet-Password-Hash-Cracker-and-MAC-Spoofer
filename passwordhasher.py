@@ -41,8 +41,10 @@ if user_response == 1:
     base64_password = binascii.b2a_base64(utf_password)
     hex_password = binascii.b2a_hex(utf_password)
 
-    print(f"{g}[*] Default Hashing{rc}\nBase64 Password : {base64_password} \nHEX Password {hex_password}")
-
-
-    hashing_algorithms = []
+    print(f"{g}[*] Performing Default Hashing{rc}\nBase64 Password : {base64_password} \nHEX Password {hex_password}")
+    time.sleep(1)
+    hashing_algorithms = ['md5','sha1','sha224','sha3_224','sha256','sha3_256','sha512','sha3_512']
+    for hashing_algorithm in hashing_algorithms:
+        password_hash = hashlib.new(hashing_algorithm,utf_password).hexdigest()
+        print(f" Hashing Algorithm : {hashing_algorithm} Password Hash : {password_hash} ")
 
